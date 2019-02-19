@@ -5,7 +5,7 @@ from redis import StrictRedis
 from beatx import serializer
 
 
-class Store:
+class Store(object):
     SCHEDULE_KEY = 'celery:schedule'
     LOCK_KEY = 'celery:beat-lock'
 

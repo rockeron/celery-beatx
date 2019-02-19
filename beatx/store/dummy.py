@@ -1,4 +1,4 @@
-class Store:
+class Store(object):
     def __init__(self, store_url=None):
         pass
 

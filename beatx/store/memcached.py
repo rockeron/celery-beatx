@@ -1,9 +1,13 @@
-from urllib.parse import urlparse
+try:
+    from urlparse import urlparse
+except ImportError:
+    from urllib.parse import urlparse
+import sys
 
 from beatx import serializer
 
 
-class BaseStore:
+class BaseStore(object):
     SCHEDULE_KEY = 'celery:schedule'
     LOCK_KEY = 'celery:beat-lock'
 

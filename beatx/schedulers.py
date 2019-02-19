@@ -1,4 +1,8 @@
-from urllib.parse import urlparse
+try:
+    from urlparse import urlparse
+except ImportError:
+    from urllib.parse import urlparse
+import sys
 
 from celery.beat import Scheduler as BaseScheduler
 from celery.exceptions import ImproperlyConfigured
@@ -6,6 +10,7 @@ from celery.utils.log import get_logger
 
 from .utils import import_string
 
+PY2 = sys.version_info[0] == 2
 logger = get_logger(__name__)
 
 
