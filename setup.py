@@ -16,6 +16,7 @@ setup(
 
     install_requires=[
         'celery',
+        'redis',
     ],
 
     packages=find_packages(exclude=['beatx.tests.*', 'beatx.tests']),
